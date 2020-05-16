@@ -20,6 +20,9 @@ from __future__ import print_function
 __version__: '1.0.0'
 __author__: 'Jan Rodolf Espinas'
 
+def f(x):
+    return (x ** 3) + (4 * (x ** 2)) - 10
+    
 def main():
     pass
 
