@@ -17,14 +17,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import math 
-
 __version__: '1.0.0'
 __author__: 'Jan Rodolf Espinas'
 
 
 def f(x):
-    return math.pow(x, 3) + (4 * (math.pow(x, 2))) - 10
+    return (x ** 3) + (4 * (x ** 2)) - 10
 
 def bisection_method(a,b,iterations):
     for i in range(iterations):
