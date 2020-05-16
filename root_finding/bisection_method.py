@@ -17,14 +17,28 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import math 
+
 __version__: '1.0.0'
 __author__: 'Jan Rodolf Espinas'
 
 def f(x):
-    return (x ** 3) + (4 * (x ** 2)) - 10
-    
+    return math.pow(x, 3) + (4 * (math.pow(x, 2))) - 10
+
+def bisection_method(a,b,iterations):    
+    for i in range(iterations):
+        c = (a + b) / 2
+        root = f(c)
+
+        if root > 0:
+            b = c
+        else:
+            a = c
+
+        print(f'{i+1}: a = {a:.6f}, b = {b:.6f}, c = {c:.6f}, root = {root:.6f}')
+
 def main():
-    pass
+    bisection_method(1,2,15)
 
 if __name__ == '__main__':
     main()
