@@ -25,20 +25,23 @@ __author__: 'Jan Rodolf Espinas'
 def f(x):
     return math.pow(x, 3) + (4 * (math.pow(x, 2))) - 10
 
-def bisection_method(a,b,iterations):    
+def bisection_method(a,b,iterations):
     for i in range(iterations):
+        tol = (b-a)
+        if tol < 1e-4:
+            break 
         c = (a + b) / 2
         root = f(c)
-
+        
         if root > 0:
             b = c
         else:
             a = c
 
-        print(f'{i+1}: a = {a:.6f}, b = {b:.6f}, c = {c:.6f}, root = {root:.6f}')
+        print(f'{i+1}: a = {a:.6f}, b = {b:.6f}, c = {c:.6f}, root = {root:.6f}, tolerance = {tol:.6f}')
 
 def main():
-    bisection_method(1,2,15)
+    bisection_method(1,2,15,)
 
 if __name__ == '__main__':
     main()
