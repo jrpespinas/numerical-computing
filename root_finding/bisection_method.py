@@ -29,8 +29,12 @@ sign = lambda x: math.copysign(1,x)
 def f(x):
     return (x ** 3) + (4 * (x ** 2)) - 10
 
+def check_root(a,b):
+    if f(a)*f(b) < 0:
+	return True
+
 def bisection_method(a,b,iterations):
-    pass
+    pass 
 
 def main():
     bisection_method(1,2,15)
