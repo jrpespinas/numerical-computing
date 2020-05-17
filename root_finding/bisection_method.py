@@ -86,20 +86,22 @@ def bisection_method(a, b, iterations):
             c = (a + b) / 2
             tol = (b - a) / 2
 
+            # Check if root found or tolerance exceeded
             if f(c) == 0 or tol <= TOL:
                 break
 
+            # Reassin endpoints
             if f(c) * f(a) < 0:
                 b = c
             else:
                 a = c
-
-            verbosity = (
-                f'{i+1}:\ta={a:.6f},\tb={b:.6f},\tc={c:.6f},\troot={f(c):.6f}\t'
-                f'tolerance={tol:.6f}'
-            )
+ 
+            # Display result
             if len(sys.argv) > 1:
-                print(verbosity)
+                print(
+                    f'{i+1}:\ta={a:.6f},\tb={b:.6f},\tc={c:.6f},'
+                    f'\troot={f(c):.6f}\ttolerance={tol:.6f}'
+                )
             else:
                 print(f'{i+1}:\t root = {f(c):.6f},\ttolerance = {tol:.6f}')
 
