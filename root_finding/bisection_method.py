@@ -30,23 +30,7 @@ def f(x):
     return (x ** 3) + (4 * (x ** 2)) - 10
 
 def bisection_method(a,b,iterations):
-    for i in range(iterations):
-        # Check root if less than tolerance 
-        tol = (b-a)
-        if tol < 1e-4:
-            break
-
-        # Find root and midpoint
-        c = (a + b) / 2
-        root = f(c)
-        
-        # reassign intervals
-        if root > 0:
-            b = c
-        else:
-            a = c
-
-        print(f'{i+1}:\ta = {a:.6f},\tb = {b:.6f},\tc = {c:.6f},\troot = {root:.6f},\ttolerance = {tol:.6f}')
+    pass
 
 def main():
     bisection_method(1,2,15)
