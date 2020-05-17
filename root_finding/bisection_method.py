@@ -23,6 +23,7 @@ import math
 __version__: '1.0.0'
 __author__: 'Jan Rodolf Espinas'
 
+TOL = 1e-4
 
 sign = lambda x: math.copysign(1,x)
 
@@ -34,8 +35,9 @@ def check_root(a,b):
 	return True
 
 def bisection_method(a,b,iterations):
-    if check_root:
-	pass
+    if check_root(a,b):
+	while (b-a)/2 > TOL:
+	    pass
     else:
 	print("Root does not exist")
 
