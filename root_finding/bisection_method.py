@@ -34,7 +34,10 @@ def check_root(a,b):
 	return True
 
 def bisection_method(a,b,iterations):
-    pass 
+    if check_root:
+	pass
+    else:
+	print("Root does not exist")
 
 def main():
     bisection_method(1,2,15)
