@@ -11,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 """Bisection Method using Python"""
 
 from __future__ import absolute_import
@@ -83,24 +84,28 @@ def bisection_method(a, b, iterations):
         i = 0
         while i < iterations:
             c = (a + b) / 2
-            root = f(c)
             tol = (b - a) / 2
-            if root == 0 or tol <= TOL:
+
+            if f(c) == 0 or tol <= TOL:
                 break
-            if root * f(a) < 0:
+
+            if f(c) * f(a) < 0:
                 b = c
             else:
                 a = c
 
-            verbosity = f'{i+1}:\ta={a:.6f},\tb={b:.6f},\tc={c:.6f},\troot={root:.6f}'
+            verbosity = (
+                f'{i+1}:\ta={a:.6f},\tb={b:.6f},\tc={c:.6f},\troot={f(c):.6f}\t'
+                f'tolerance={tol:.6f}'
+            )
             if len(sys.argv) > 1:
-                print()
+                print(verbosity)
             else:
-                print(f'{i+1}:\t root = {root:.6f},\ttolerance = {tol:.6f}')
+                print(f'{i+1}:\t root = {f(c):.6f},\ttolerance = {tol:.6f}')
 
             i += 1
-        else:
-            print("Root does not exist")
+    else:
+        print("Root does not exist")
 
 
 if __name__ == '__main__':
