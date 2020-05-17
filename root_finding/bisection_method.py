@@ -17,9 +17,14 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import sys
+import math 
+
 __version__: '1.0.0'
 __author__: 'Jan Rodolf Espinas'
 
+
+sign = lambda x: math.copysign(1,x)
 
 def f(x):
     return (x ** 3) + (4 * (x ** 2)) - 10
@@ -41,7 +46,7 @@ def bisection_method(a,b,iterations):
         else:
             a = c
 
-        print(f'{i+1}: a = {a:.6f}, b = {b:.6f}, c = {c:.6f}, root = {root:.6f}, tolerance = {tol:.6f}')
+        print(f'{i+1}:\ta = {a:.6f},\tb = {b:.6f},\tc = {c:.6f},\troot = {root:.6f},\ttolerance = {tol:.6f}')
 
 def main():
     bisection_method(1,2,15)
