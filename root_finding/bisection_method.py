@@ -17,22 +17,23 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import sys
+
 __version__: '1.0.0'
 __author__: 'Jan Rodolf Espinas'
 
-import sys
 
-TOL = 1e-4
+TOL = 1e-6
 
 def f(x):
     return (x ** 3) + (4 * (x ** 2)) - 10
 
 def check_root(a,b):
-    if f(a)*f(b) < 0:
+	if f(a) * f(b) < 0:
 		return True
 
 def bisection_method(a,b,iterations):
-    if check_root(a,b):
+	if check_root(a, b):
 		i = 0
 		while i < iterations:
 			c = (a + b) / 2
@@ -40,20 +41,23 @@ def bisection_method(a,b,iterations):
 			if root == 0 or (b - a)/2 <= TOL:
 				break
 
-			if root*f(a) < 0:
+			if root * f(a) < 0:
 				b = c
 			else:
 				a = c
 			
-			if len(sys.argv) > 0:
+			if len(sys.argv) > 1:
 				print(\
-					f'{i+1}: a={a:.6f}, b={b:.6f}, c={c:.6f}, root={root:.6f}')
+					f'{i+1}: a={a:.6f}, b={b:.6f}, c={c:.6f}, root={root:.6f},')
+			else:
+				print(f'{i+1}: root = {root:.6f}')
+
 			i += 1			
-    else:
+	else:
 		print("Root does not exist")
 	
 def main():
-    bisection_method(1,2,15)
+	bisection_method(1,2,20)
 
 if __name__ == '__main__':
     main()
