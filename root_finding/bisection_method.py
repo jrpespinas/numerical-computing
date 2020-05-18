@@ -51,9 +51,9 @@ def check_root(a, b):
 
     Parameters
     ----------
-    a : int
+    a : int or float
         Left endpoint
-    b : int
+    b : int or float
         Right endpoint
 
     Return
@@ -68,7 +68,8 @@ def check_root(a, b):
 
 def bisection_method(a, b, iterations):
     """
-    A root-finding algorithm which uses an iterative method.
+    A root-finding algorithm which uses an iterative method 
+    similar to binary search.
 
     Parameters
     ----------
@@ -95,7 +96,7 @@ def bisection_method(a, b, iterations):
                 b = c
             else:
                 a = c
- 
+
             # Display result
             if len(sys.argv) > 1:
                 print(
