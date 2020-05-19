@@ -66,9 +66,9 @@ def check_root(a, b):
         return True
 
 
-def bisection_method(a, b, iterations):
+def bisection_method(a, b):
     """
-    A root-finding algorithm which uses an iterative method 
+    A root-finding algorithm which uses an iterative method
     similar to binary search.
 
     Parameters
@@ -77,25 +77,25 @@ def bisection_method(a, b, iterations):
         left endpoint
     b : int or float
         right endpoint
-    iterations : int
-        number of iterations
 
     """
     if check_root(a, b):
         i = 0
-        while i < iterations:
+        while (b - a) / 2 > TOL:
             c = (a + b) / 2
-            tol = (b - a) / 2
 
             # Check if root found or tolerance exceeded
-            if f(c) == 0 or tol <= TOL:
+            if f(c) == 0:
                 break
 
-            # Reassin endpoints
+            # Reassign endpoints
             if f(c) * f(a) < 0:
                 b = c
             else:
                 a = c
+
+            # Tolerance
+            tol = (b - a) / 2
 
             # Display result
             if len(sys.argv) > 1:
@@ -104,7 +104,7 @@ def bisection_method(a, b, iterations):
                     f'\troot={f(c):.6f}\ttolerance={tol:.6f}'
                 )
             else:
-                print(f'{i+1}:\t root = {f(c):.6f},\ttolerance = {tol:.6f}')
+                print(f'{i+1}:\t root = {c:.6f},\ttolerance = {tol:.6f}')
 
             i += 1
     else:
@@ -112,4 +112,4 @@ def bisection_method(a, b, iterations):
 
 
 if __name__ == '__main__':
-    bisection_method(1, 2, 20)
+    bisection_method(1, 2)
