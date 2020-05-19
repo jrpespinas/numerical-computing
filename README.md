@@ -2,7 +2,7 @@ Numerical Analysis
 ===
 
 ## Overview
-This repository contains exercises, notebooks, and scripts related to Numerical Analysis.
+This repository contains notebooks and scripts introducing the different topics in Numerical Analysis beginning with the Fundamentals, Systems of Equations, Interpolation until Optimization, and Numerical Solutions to Partial Differential Equations.
 
 ## License
 ```
