@@ -29,7 +29,7 @@ def f(x):
 
 
 def df(x):
-    return (3 * (x ** 2)) + 8 * x
+    return x * (8 + (3 * x))
 
 
 def newtons_method(N, p_0):
