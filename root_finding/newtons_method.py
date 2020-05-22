@@ -28,6 +28,10 @@ def f(x):
     return (x ** 3) + (4 * (x ** 2)) - 10
 
 
+def df(x):
+    return (3 * (x ** 2)) + 8 * x
+
+
 def newtons_method(N, p_0):
     i = 1
     while i < N:
