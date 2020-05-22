@@ -25,7 +25,7 @@ __author__ = 'Jan Rodolf Espinas'
 
 
 def f(x):
-    return (x ** 3) + (4 * (x ** 2)) - 10
+    return -10 + x * (0 + x * (4 + x))
 
 
 def df(x):

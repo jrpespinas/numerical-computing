@@ -42,7 +42,7 @@ def f(x):
         the output of the function
 
     """
-    return (x ** 3) + (4 * (x ** 2)) - 10
+    return -10 + x * (0 + x * (4 + x))
 
 
 def check_root(a, b):
