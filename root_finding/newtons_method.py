@@ -28,7 +28,16 @@ def f(x):
     return (x ** 3) + (4 * (x ** 2)) - 10
 
 
-def newtons_method():
+def newtons_method(N, p_0):
+    i = 1
+    while i < N:
+        p = p_0 - (f(p_0) / df(p_0))
+        if abs(p - p_0) < 1e-7:
+            print(p)
+            break
+        i += 1
+        p_0 = p
+
     pass
 
 
