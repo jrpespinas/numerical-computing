@@ -42,7 +42,8 @@ def f(x):
         the output of the function
 
     """
-    return -10 + x * (0 + x * (4 + x))
+    # return -10 + x * (0 + x * (4 + x))
+    return (-6 + x * (14 + x * (-7 + x)))
 
 
 def check_root(a, b):
@@ -104,7 +105,7 @@ def bisection_method(a, b):
                     f'\troot={f(c):.6f}\ttolerance={tol:.6f}'
                 )
             else:
-                print(f'{i+1}:\t root = {c:.6f},\ttolerance = {tol:.6f}')
+                print(f'{i+1}:\t root = {c:.7f},\ttolerance = {tol:.7f}')
 
             i += 1
     else:
@@ -112,4 +113,4 @@ def bisection_method(a, b):
 
 
 if __name__ == '__main__':
-    bisection_method(1, 2)
+    bisection_method(0, 1)
