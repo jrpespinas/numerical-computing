@@ -25,10 +25,38 @@ __author__ = 'Jan Rodolf Espinas'
 
 
 def f(x):
+    """
+    A function that evaluates `x`.
+
+    Parameters
+    ----------
+    x : int or float
+        Any value to be evaluated
+
+    Returns
+    -------
+    float
+        the output of the function
+
+    """
     return -10 + x * (0 + x * (4 + x))
 
 
 def df(x):
+    """
+    A derivative of the `f()` that evaluates `x`.
+
+    Parameters
+    ----------
+    x : int or float
+        Any value to be evaluated
+
+    Returns
+    -------
+    float
+        the output of the function
+
+    """
     return x * (8 + (3 * x))
 
 
@@ -41,8 +69,6 @@ def newtons_method(N, p_0):
             break
         i += 1
         p_0 = p
-
-    pass
 
 
 if __name__ == "__main__":
