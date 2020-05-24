@@ -19,6 +19,8 @@ from __future__ import division
 from __future__ import print_function
 
 import sys
+import numpy as np
+
 
 __version__ = '1.0.0'
 __author__ = 'Jan Rodolf Espinas'
@@ -43,7 +45,9 @@ def f(x):
 
     """
     # return -10 + x * (0 + x * (4 + x))
-    return (-6 + x * (14 + x * (-7 + x)))
+    # return (-6 + x * (14 + x * (-7 + x)))  # homework 1
+    # return -2 + x * (3 + x * (-1 + (np.exp(x)))) # homework 2
+    return np.log(x) + 4 + x * (-4 + x)  # homework 3
 
 
 def check_root(a, b):
@@ -113,4 +117,14 @@ def bisection_method(a, b):
 
 
 if __name__ == '__main__':
+    # homework 1
     bisection_method(0, 1)
+    bisection_method(1, 3.2)
+    bisection_method(3.2, 4)
+
+    # homework 2
+    bisection_method(0, 1)
+
+    # homework 3
+    bisection_method(1, 2)
+    bisection_method(2, 4)
