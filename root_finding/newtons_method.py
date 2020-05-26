@@ -61,6 +61,18 @@ def df(x):
 
 
 def newtons_method(N, p_0):
+    """
+    Derived from Taylor Polynomials, Newton's Method
+    Approximates `f()` with tangent lines to find the root.
+
+    Parameters
+    ----------
+    N : int
+        Number of iterations
+    p_0 : int
+        Approximation to `p`
+
+    """
     i = 1
     while i < N:
         p = p_0 - (f(p_0) / df(p_0))
