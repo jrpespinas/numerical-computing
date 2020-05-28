@@ -22,7 +22,26 @@ __version__ = '1.0.0'
 __author__ = 'Jan Rodolf Espinas'
 
 
-def evaluate(x, degree, coefficients, base):
+def evaluate(x, k, c, b):
+	'''
+	Evaluate `x` from a polynomial using Horner's Method.
+
+	Parameters
+	----------
+	x : int or float
+		The value of x
+	k : int
+		degrees or the number of terms
+	c : int or float
+		coefficients
+	b : int or float
+		base points
+
+	Returns
+	-------
+	y : int or float
+		The output of the polynomial
+	'''
     pass
 
 
