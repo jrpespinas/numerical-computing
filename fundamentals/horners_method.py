@@ -22,5 +22,9 @@ __version__ = '1.0.0'
 __author__ = 'Jan Rodolf Espinas'
 
 
+def evaluate(degree, coefficients, base, x):
+    pass
+
+
 if __name__ == "__main__":
-	pass
+    pass
