@@ -22,9 +22,14 @@ __version__ = '1.0.0'
 __author__ = 'Jan Rodolf Espinas'
 
 
-def evaluate(degree, coefficients, base, x):
+def evaluate(x, degree, coefficients, base):
     pass
+
+
+def f(x):
+    return (x ** 3) + (4 * (x ** 2)) - 10
 
 
 if __name__ == "__main__":
-    pass
+    print(evaluate(3, 4, [1, 4, 0, -10], [0, 0, 0, 0]))
+    print(f(3))
