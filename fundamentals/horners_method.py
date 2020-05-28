@@ -52,10 +52,15 @@ def evaluate(x, k, c, b=None):
     return y
 
 
+def nested_f(x):
+    return -10 + x * (0 + x * (4 + x * (1)))
+
+
 def f(x):
     return (x ** 3) + (4 * (x ** 2)) - 10
 
 
 if __name__ == "__main__":
     print(evaluate(3, 4, [1, 4, 0, -10]))
+    print(nested_f(3))
     print(f(3))
