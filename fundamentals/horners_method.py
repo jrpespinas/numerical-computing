@@ -23,26 +23,29 @@ __author__ = 'Jan Rodolf Espinas'
 
 
 def evaluate(x, k, c, b):
-	'''
-	Evaluate `x` from a polynomial using Horner's Method.
+    '''
+    Evaluate `x` from a polynomial using Horner's Method.
 
-	Parameters
-	----------
-	x : int or float
-		The value of x
-	k : int
-		degrees or the number of terms
-	c : int or float
-		coefficients
-	b : int or float
-		base points
+    Parameters
+    ----------
+    x : int or float
+            The value of x
+    k : int
+            degrees or the number of terms
+    c : int or float
+            coefficients
+    b : int or float
+            base points
 
-	Returns
-	-------
-	y : int or float
-		The output of the polynomial
-	'''
-    pass
+    Returns
+    -------
+    y : int or float
+            The output of the polynomial
+    '''
+    y = c[0]
+    for i in range(1, k):
+        y = (y * (x - b[i])) + c[i]
+    return y
 
 
 def f(x):
