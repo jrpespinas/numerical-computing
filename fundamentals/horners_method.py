@@ -54,7 +54,7 @@ def evaluate(x, k, c, b=None):
 
 def nested_f(x):
     """
-    Horner's Rule of the polynomial.
+    Horner's Rule of the polynomial that evaluates `x`.
 
     Parameters
     ----------
@@ -63,7 +63,7 @@ def nested_f(x):
 
     Returns
     -------
-    float
+    int or float
         the output of the function
 
     """
@@ -71,6 +71,20 @@ def nested_f(x):
 
 
 def f(x):
+    """
+    A basic function that evaluates `x`.
+
+    Parameters
+    ----------
+    x : int or float
+        Any value to be evaluated
+
+    Returns
+    -------
+    int or float
+        the output of the function
+
+    """
     return (x ** 3) + (4 * (x ** 2)) - 10
 
 
