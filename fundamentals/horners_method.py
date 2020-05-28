@@ -22,7 +22,7 @@ __version__ = '1.0.0'
 __author__ = 'Jan Rodolf Espinas'
 
 
-def evaluate(x, k, c, b):
+def evaluate(x, k, c, b=None):
     '''
     Evaluate `x` from a polynomial using Horner's Method.
 
@@ -43,8 +43,12 @@ def evaluate(x, k, c, b):
             The output of the polynomial
     '''
     y = c[0]
-    for i in range(1, k):
-        y = (y * (x - b[i])) + c[i]
+    if b is None:
+        for i in range(1, k):
+            y = c[i] + (x * y)
+    else:
+        for i in range(1, k):
+            y = (y * (x - b[i])) + c[i]
     return y
 
 
@@ -53,5 +57,5 @@ def f(x):
 
 
 if __name__ == "__main__":
-    print(evaluate(3, 4, [1, 4, 0, -10], [0, 0, 0, 0]))
+    print(evaluate(3, 4, [1, 4, 0, -10]))
     print(f(3))
