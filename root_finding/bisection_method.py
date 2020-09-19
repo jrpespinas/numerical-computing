@@ -118,12 +118,12 @@ def bisection_method(a, b):
 
 if __name__ == '__main__':
     # homework 1
-    bisection_method(0, 1)
-    bisection_method(1, 3.2)
-    bisection_method(3.2, 4)
+    #bisection_method(0, 1)
+    #bisection_method(1, 3.2)
+    #bisection_method(3.2, 4)
 
     # homework 2
-    bisection_method(0, 1)
+    #bisection_method(0, 1)
 
     # homework 3
     bisection_method(1, 2)
