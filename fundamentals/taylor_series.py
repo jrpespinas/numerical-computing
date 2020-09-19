@@ -12,27 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Error Analysis: Intro to Numerical Analysis"""
+"""Intro to Numerical Analysis: Taylor Series"""
 
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-__version__ = '1.0.1'
+__version__ = '1.0.0'
 __author__ = 'Jan Rodolf Espinas'
 
-
-def absolute_error(true_fx, approximate_fx):
-    return abs(true_fx - approximate_fx)
-
-
-def relative_error(true_fx, approximate_fx):
-    return absolute_error(true_fx, approximate_fx)/abs(true_fx)
-
-
 def main():
-    print(relative_error(10, 9))
-
+    pass
 
 if __name__ == '__main__':
     main()
