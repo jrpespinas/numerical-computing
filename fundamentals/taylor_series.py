@@ -34,8 +34,10 @@ class TaylorSeries(object):
         return self.compute_taylor_series(x)
 
 class Exponential(TaylorSeries):
-        raise NotImplementedError
+    raise NotImplementedError
 
+class Sine(TaylorSeries):
+    raise NotImplementedError
 
 def main():
     pass
