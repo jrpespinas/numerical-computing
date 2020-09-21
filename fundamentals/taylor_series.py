@@ -39,6 +39,10 @@ class Exponential(TaylorSeries):
 class Sine(TaylorSeries):
     raise NotImplementedError
 
+class Cosine(TaylorSeries):
+    raise NotImplementedError
+
+
 def main():
     pass
 
