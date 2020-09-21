@@ -27,7 +27,13 @@ class TaylorSeries(object):
     def __init__(self, num_terms: int):
         self.num_terms = num_terms
     
+    def compute_taylor_series(self, x: float) -> float:
+        raise NotImplementedError
+    
+    def __call__(self, x: float) -> float:
+        return self.compute_taylor_series(x)
 
+    
 def main():
     pass
 
