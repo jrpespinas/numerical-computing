@@ -34,7 +34,16 @@ class TaylorSeries(object):
         return self.compute_taylor_series(x)
 
 class Exponential(TaylorSeries):
-    raise NotImplementedError
+    def compute_taylor_series(self, x: float) -> float:
+        approximation = sum(
+            list(
+                map(
+                    lambda number: (x ** number) / (math.factorial(number)),
+                    list(range(self.num_terms))
+                )
+            )
+        )
+        return approximation
 
 class Sine(TaylorSeries):
     raise NotImplementedError
