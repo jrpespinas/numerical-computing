@@ -33,7 +33,10 @@ class TaylorSeries(object):
     def __call__(self, x: float) -> float:
         return self.compute_taylor_series(x)
 
-    
+class Exponential(TaylorSeries):
+        raise NotImplementedError
+
+
 def main():
     pass
 
