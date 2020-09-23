@@ -59,8 +59,17 @@ class Sine(TaylorSeries):
         return approximation
 
 class Cosine(TaylorSeries):
-    raise NotImplementedError
-
+    def compute_taylor_series(self, x: float) -> float:
+        approximation = sum(
+            list(
+                map(
+                    lambda number: ((-1) ** number) * (x ** (2 * number))
+                    / (math.factorial(2 * number)),
+                    list(range(self.num_terms))
+                )
+            )
+        )
+        return approximation
 
 def main():
     pass
