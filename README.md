@@ -1,12 +1,11 @@
-Numerical Analysis
-===
+Numerical Computing
 
 ## Overview
 This repository contains notebooks and scripts introducing the different topics in Numerical Analysis beginning with the Fundamentals, Systems of Equations, Interpolation until Optimization, and Numerical Solutions to Partial Differential Equations.
 
 ## License
 ```
-Copyright 2020 Jan Rodolf Espinas
+Copyright 2021 Jan Rodolf Espinas
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
