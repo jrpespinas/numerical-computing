@@ -3,10 +3,6 @@
 import numpy as np
 
 
-def flip_sign(number: float) -> float:
-    return -number
-
-
 def gaussian_elimination(matrix: np.ndarray):
     return matrix
 
