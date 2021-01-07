@@ -25,6 +25,18 @@ __author__ = 'Jan Rodolf Espinas'
 
 
 def horner_method(degree: int, x: float, coefficients: List[float]):
+    """Efficient way to evaluate polynomials.
+
+    Args:
+        degree (int): highest exponent of a variable 
+            with a non-zero coefficient.
+        x (float): the value substituted to the variable.
+        coefficients (:obj:`List` of :obj:`float`:): the coefficients
+            of the polynomial. 
+        
+    Returns:
+        c (float): the evaluation of the polynomial.
+    """
     c = coefficients[0]
     for i in range(1, degree + 1):
         c = coefficients[i] + (c * x)
