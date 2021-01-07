@@ -1,4 +1,4 @@
-# Copyright 2020 Jan Rodolf Espinas
+# Copyright 2021 Jan Rodolf Espinas
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,77 +18,15 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-__version__ = '1.0.0'
+from typing import List
+
+__version__ = '2.0.0'
 __author__ = 'Jan Rodolf Espinas'
 
 
-def evaluate(x, k, c, b=None):
-    '''
-    Evaluate `x` from a polynomial using Horner's Method.
+def horner_method(degree: int, x: float, coefficients: List[float]):
+    c = coefficients[0]
+    for i in range(1, degree + 1):
+        c = coefficients[i] + (c * x)
 
-    Parameters
-    ----------
-    x : int or float
-            The value of x
-    k : int
-            degrees or the number of terms
-    c : int or float
-            coefficients
-    b : int or float
-            base points
-
-    Returns
-    -------
-    y : int or float
-            The output of the polynomial
-    '''
-    y = c[0]
-    if b is None:
-        for i in range(1, k):
-            y = c[i] + (x * y)
-    else:
-        for i in range(1, k):
-            y = (y * (x - b[i])) + c[i]
-    return y
-
-
-def nested_f(x):
-    """
-    Horner's Rule of the polynomial that evaluates `x`.
-
-    Parameters
-    ----------
-    x : int or float
-        Any value to be evaluated
-
-    Returns
-    -------
-    int or float
-        the output of the function
-
-    """
-    return -10 + x * (0 + x * (4 + x * (1)))
-
-
-def f(x):
-    """
-    A basic function that evaluates `x`.
-
-    Parameters
-    ----------
-    x : int or float
-        Any value to be evaluated
-
-    Returns
-    -------
-    int or float
-        the output of the function
-
-    """
-    return (x ** 3) + (4 * (x ** 2)) - 10
-
-
-if __name__ == "__main__":
-    print(evaluate(3, 4, [1, 4, 0, -10]))
-    print(nested_f(3))
-    print(f(3))
+    return c
