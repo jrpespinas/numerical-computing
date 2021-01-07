@@ -24,7 +24,7 @@ __version__ = '2.0.0'
 __author__ = 'Jan Rodolf Espinas'
 
 
-def horner_method(degree: int, x: float, coefficients: List[float]):
+def horner_method(degree: int, x: float, coefficients: List[float]) -> float:
     """Efficient way to evaluate polynomials.
 
     Args:
