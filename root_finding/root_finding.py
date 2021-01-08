@@ -3,7 +3,7 @@
 # import numpy as np
 import math
 
-def check_root(f: 'function', left: float, right: float) -> bool: 
+def check_root_exist(f: 'function', left: float, right: float) -> bool: 
     """Identify if the root exists between two endpoints
     evaluated by function `f`.
 
@@ -37,7 +37,7 @@ def bisection_method(f: 'function', left: float, right: float,
         >>> approximate_root = bisection_method(math.cos, 3, 4, 1e-10)
     """
     
-    assert check_root(f, left, right), \
+    assert check_root_exist(f, left, right), \
         "ERROR: Root does not exist between {} and {}.".format(left, right)
 
     while abs(right - left) > tolerance:
