@@ -1,6 +1,7 @@
 """Root-Finding Algorithms"""
 
 # import numpy as np
+import math
 
 def check_root(f: 'function', left: float, right: float) -> bool: 
     """Identify if the root exists between two endpoints
@@ -16,9 +17,23 @@ def check_root(f: 'function', left: float, right: float) -> bool:
     """   
     return True if f(left) * f(right) < 0 else False
 
+def bisection_method(f: 'function', left: float, right: float, 
+    error_bound: float = 1e-7) -> float:
+    
+    assert check_root(f, left, right), \
+        "ERROR: Root does not exist between {} and {}.".format(left, right)
+
+    while abs(right - left) > error_bound:
+        midpoint = (left + right) / 2
+        if f(midpoint) * f(left) < 0:
+            right = midpoint
+        else: 
+            left = midpoint
+
+    return midpoint
 
 def main():
-    
+    print(bisection_method(math.sin, 2, 4))
 
 if __name__ == "__main__":
     main()
