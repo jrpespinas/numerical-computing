@@ -1,7 +1,11 @@
 """Root-Finding Algorithms"""
 
-# import numpy as np
 import math
+import numpy as np
+
+
+__version__ = "1.0.0"
+__author__ = "Jan Rodolf Espinas"
 
 
 def check_root_exist(f: 'function', left: float, right: float) -> bool:
@@ -58,4 +62,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
