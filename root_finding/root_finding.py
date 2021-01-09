@@ -3,7 +3,8 @@
 # import numpy as np
 import math
 
-def check_root_exist(f: 'function', left: float, right: float) -> bool: 
+
+def check_root_exist(f: 'function', left: float, right: float) -> bool:
     """Identify if the root exists between two endpoints
     evaluated by function `f`.
 
@@ -14,11 +15,12 @@ def check_root_exist(f: 'function', left: float, right: float) -> bool:
 
     Returns:
         bool: Returns `True` if the root exists, returns `False` otherwise.
-    """   
+    """
     return True if f(left) * f(right) < 0 else False
 
-def bisection_method(f: 'function', left: float, right: float, 
-    tolerance: float = 1e-7) -> float:
+
+def bisection_method(f: 'function', left: float, right: float,
+                     tolerance: float = 1e-7) -> float:
     """Find the root guided by the intermediate value theorem and binary 
     search algorithm.
 
@@ -28,7 +30,7 @@ def bisection_method(f: 'function', left: float, right: float,
         right (float): The right endpoint.
         tolerance (:obj:`float`, optional): The value which determines when
             the loop should stop.
-    
+
     Returns:
         midpoint (float): The approximate root.
 
@@ -36,7 +38,7 @@ def bisection_method(f: 'function', left: float, right: float,
         >>> approximate_root = bisection_method(math.sin, 2, 4)
         >>> approximate_root = bisection_method(math.cos, 3, 4, 1e-10)
     """
-    
+
     assert check_root_exist(f, left, right), \
         "ERROR: Root does not exist between {} and {}.".format(left, right)
 
@@ -44,13 +46,16 @@ def bisection_method(f: 'function', left: float, right: float,
         midpoint = (left + right) / 2
         if f(midpoint) * f(left) < 0:
             right = midpoint
-        else: 
+        else:
             left = midpoint
 
     return midpoint
 
+
 def main():
     print(bisection_method(math.sin, 2, 4))
 
+
 if __name__ == "__main__":
     main()
+
