@@ -55,8 +55,14 @@ def bisection_method(f: 'function', left: float, right: float,
 
     return midpoint
 
+
 def newtonian_method():
     raise NotImplementedError
+
+
+def fixed_point_iteration():
+    raise NotImplementedError
+
 
 def main():
     print(bisection_method(math.sin, 2, 4))
